@@ -23,4 +23,12 @@ public class ExpressionTest {
             assertThat(expression.getExpression()).isEqualTo("1,2,3");
         });
     }
+
+    @Test
+    void Special_Separator() {
+        assertSimpleTest(() -> {
+            Expression expression = Expression.parse("//\\\\n1*2*3");
+            assertThat(expression.getOperators()).contains('\\');
+        });
+    }
 }
