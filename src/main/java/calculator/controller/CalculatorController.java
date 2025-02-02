@@ -21,6 +21,7 @@ public class CalculatorController {
     }
 
     public void run() {
+        String line = inputView.getExpression();
         
     }
 }
