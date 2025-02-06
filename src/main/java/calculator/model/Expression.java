@@ -55,7 +55,7 @@ public class Expression {
 
     private String getOperatorsRegex() {
         return operators.stream()
-                .map(ch -> "\\" + ch) // \같은 문자 처리
+                .map((ch) -> Pattern.quote(ch.toString())) // \같은 문자 처리
                 .collect(Collectors.joining("|"));
     }
 }
